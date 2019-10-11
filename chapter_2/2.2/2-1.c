@@ -1,33 +1,29 @@
 #include <stdio.h>
 #include <limits.h>
 
-int main() {
-  char prev = 0, c = 0;
+int (main)
+{
+ int avg = 0;
+    int sum =0;
+    int x=0;
 
-  while (c >= prev) {
-    prev = c;
-    c++;
-  }
+    /* Array- declaration – length 4*/
+    int num[4];
 
-  printf("CHAR_MIN: %d\nCHAR_MAX: %d\n", c, prev);
+    /* We are using a for loop to traverse through the array
+     * while storing the entered values in the array
+     */
+    for (x=0; x<4;x++)
+    {
+        printf("Enter number %d \n", (x+1));
+        scanf("%d", &num[x]);
+    }
+    for (x=0; x<4;x++)
+    {
+        sum = sum+num[x];
+    }
 
-  short int shrt_prev = 0, shrt_c = 0;
-
-  while (shrt_c >= shrt_prev) {
-    shrt_prev = shrt_c;
-    shrt_c++;
-  }
-
-  printf("SHRT_MIN: %d\nSHRT_MAX: %d\n", shrt_c, shrt_prev);
-
-  long int long_prev = 0, long_c = 0;
-
-  while (long_c >= long_prev) {
-    long_prev = long_c;
-    long_c++;
-  }
-
-  printf("long_MIN: %ld\nlong_MAX: %ld\n", long_c, long_prev);
-
-  return 0;
+    avg = sum/4;
+    printf("Average of entered number is: %d", avg);
+    return 0;
 }
